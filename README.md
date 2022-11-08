@@ -67,7 +67,7 @@ So, the last step is different for the two types of token:
  - for the silver one: the robot allign itself with the token, it reaches it with a high velocity and then it uses a lower velocity to approach and grab the token;
  - for the golden one: the robot allign itself with the token, it reaches it with a high velocity and then it uses a lower velocity to put the silver token close to the golden one.
  
-![Flowchart](flowchartRT1.jpg)
+<img src="flowchartRT1.jpg" alt="flowchart" width="300"/>
 
 Robot API
 ---------
