@@ -6,7 +6,7 @@ This is a simple, portable robot simulator developed by [Student Robotics](https
 Some of the arenas and the exercises have been modified for the Research Track I course
 
 Installing
-----------------------
+-----------------------------
 
 The simulator requires a Python 2.7 installation, the [pygame](http://pygame.org/) library, [PyPyBox2D](https://pypi.python.org/pypi/pypybox2d/2.1-r331), and [PyYAML](https://pypi.python.org/pypi/PyYAML/).
 
@@ -33,7 +33,8 @@ $ python run.py assignment.py
 ```
 
 Program Logic
----------
+-----------------------------
+
 This is a simple python node that lets a robot find a silver box in the environment, and put this silver box close to a golden box.
 The code is symmetrical as regards the part of the silver box and the gold box, and is logically divided as follows:
  - looking for a silver token: find it?
@@ -61,7 +62,7 @@ So, the last step is different for the two types of token:
 <img src="flowchartRT1.jpg" alt="flowchart" width="300"/>
 
 Robot API
----------
+-----------------------------
 
 The API for controlling a simulated robot is designed to be as similar as possible to the [SR API][sr-api].
 
@@ -124,8 +125,9 @@ for m in markers:
 
 [sr-api]: https://studentrobotics.org/docs/programming/sr/
 
-### The added functions ###
+The added functions
 -----------------------------
+
  - `drive(speed, seconds)`:  Function for setting a linear velocity  
                            Args:  `speed (int)`: the speed of the wheels; `seconds (int)`: the time interval  
 
