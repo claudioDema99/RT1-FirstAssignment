@@ -125,7 +125,7 @@ for m in markers:
 
 [sr-api]: https://studentrobotics.org/docs/programming/sr/
 
-The added functions
+The Added Functions
 -----------------------------
 
  - `drive(speed, seconds)`:  Function for setting a linear velocity  
