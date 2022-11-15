@@ -3,7 +3,8 @@ Python Robotics Simulator
 ================================
 
 This is a simple, portable robot simulator developed by [Student Robotics](https://studentrobotics.org).
-Some of the arenas and the exercises have been modified for the Research Track I course
+Some of the arenas and the exercises have been modified for the Research Track I course.  
+The main task of this assignment, given by the professor Recchiuto, is to make the holonomic robot moves in the virtual environment that he has presented. In this environment there are golden and silver tokens; the robot must grab the silver tokens and release (thanks to specific commands) it close to the golden tokens.
 
 Installing
 -----------------------------
