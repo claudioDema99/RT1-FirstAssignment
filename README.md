@@ -131,7 +131,7 @@ The Added Functions
 
  - `drive(speed, seconds)`:  Function for setting a linear velocity  
                            Args:  `speed (int)`: the speed of the wheels; `seconds (int)`: the time interval
-```
+```python
 	R.motors[0].m0.power = speed
 	R.motors[0].m1.power = speed
 	time.sleep(seconds)
@@ -141,7 +141,7 @@ The Added Functions
 
  - `turn(speed, seconds)`:  Function for setting an angular velocity  
                           Args:  `speed (int)`: the speed of the wheels; `seconds (int)`: the time interval
-```
+```python
 	R.motors[0].m0.power = speed
 	R.motors[0].m1.power = -speed
 	time.sleep(seconds)
@@ -151,7 +151,7 @@ The Added Functions
 
  - `find_token_silver()`:  Function for finding the closest silver token  
                          Returns:  `dist (float)`: distance of the closest token (-1 if no token is detected); `rot_y (float)`: angle between the robot and the token (-1 if no token is detected); `code`: id of the token
-```
+```python
 	dists = []
 	dist = 0
 	markers = []
@@ -172,7 +172,7 @@ The Added Functions
 
  - `find_token_gold()`:  Function for finding the closest golden token  
                        Returns:  `dist (float)`: distance of the closest token (-1 if no token is detected); `rot_y (float)`: angle between the robot and the token (-1 if no token is detected); `code`: id of the token
-```
+```python
 	dists = []
 	dist = 0
 	markers = []
@@ -194,7 +194,7 @@ The Added Functions
  - `dist_of_token(code, color)`:  Function for knowing the current distance of the token  
                                 Args:  `code`: id of the token; color: silver/golden (because we have some token with the same code but different color)  
                                 Returns:  `dist (float)`: ditance of the token with that particular code and color
-```
+```python
 	if color == "silver":
 		for token in R.see():
 			if token.info.code == code and token.info.marker_type == MARKER_TOKEN_SILVER:
@@ -208,7 +208,7 @@ The Added Functions
  - `goto_and_grab_silver(dist, rot_y, code)`:  Function for reach and grab the silver token  
                                              Args:  `dist (float)`: distance of the token; `rot_y (float)`: angle between the robot and the token; `code`: id of the token  
                                              Returns:  if we are close to the token, we grab it; if the robot is well aligned with the token, we go forward; if the robot is not well aligned with the token, we move it on the left or on the right;
-```
+```python
 	if dist < d_th_slow: 
 		print("Found it!")
 		R.grab()                      # if we are close to the token, we grab it.
@@ -246,7 +246,7 @@ The Added Functions
  - `goto_and_put_gold(dist, rot_y, code)`:  Function for reach and put the golden token  
                                           Args:  `dist (float)`: distance of the token; `rot_y (float)`: angle between the robot and the token; `code`: id of the token  
                                           Returns:  if we are close to the token, we put it; if the robot is well aligned with the token, we go forward; if the robot is not well aligned with the token, we move it on the left or on the right;
-```
+```python
 	if dist < d_th_2: 
 		print("Found it!")
 		R.release()                      # if we are close to the token, we grab it.
@@ -284,7 +284,7 @@ The Added Functions
  - `check_if_inside(code, color)`:  Function for checking if the token is already taken    
                                   Args:  `code`: id of the token; `color`: silver/golden (because we have some token with the same code but different color)
                                   Returns:  `false` if the marker is already taken/put; `true` if the marker is not already taken/put, or if it's the first token beeing taken/put
-```
+```python
 	if color == "silver":
 		if len(silver_boxes) == 0:
 			return True
@@ -303,7 +303,7 @@ The Added Functions
 
  - `random_turn_and_search_s()`:  Function for random turning and driving: after that, it calls the `find_token_silver()` function  
                                 Returns:  `dist (float)`: distance of the closest token (-1 if no token is detected); `rot_y (float)`: angle between the robot and the token (-1 if no token is detected); `code`: id of the token 
-```
+```python
 	turn(10,0.4)
 	dist, rot_y, code = find_token_silver()
 	if dist!=-1:
@@ -319,7 +319,7 @@ The Added Functions
 
  - `random_turn_and_search_g()`:  Function for random turning and driving: after that, it calls the `find_token_gold()` function  
                                 Returns:  `dist (float)`: distance of the closest token (-1 if no token is detected); `rot_y (float)`: angle between the robot and the token (-1 if no token is detected); `code`: id of the token 
-```
+```python
 	turn(10,0.4)
 	dist, rot_y, code = find_token_gold()
 	if dist!=-1:
@@ -336,7 +336,7 @@ The Added Functions
  - `golden(dist, rot_y, code)`:  Function that combine all the functions relates to the golden token..   
                               (`goto_and_grab_silver(dist, rot_y, code)`, `find_token_gold()`, `random_turn_and_search_g()`, `check_if_inside(code,"gold")`, `goto_and_put_gold(dist, rot_y, code)`)  
                                Args:  `dist (float)`: distance of the token; `rot_y (float)`: angle between the robot and the token; `code`: id of the token
-```
+```python
 	goto_and_grab_silver(dist, rot_y, code)
 	dist, rot_y, code = find_token_gold()
 	if dist==-1:
